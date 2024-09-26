@@ -5,13 +5,13 @@ import App from "./App";
 describe("User interface for the String Calculator", () => {
   test("renders the text input", () => {
     render(<App />);
-    const input = screen.getByRole("textbox");
+    const input = screen.getByTestId("textbox");
     expect(input).toBeInTheDocument();
   });
 
   test("renders the button", () => {
     render(<App />);
-    const button = screen.getByRole("calc");
+    const button = screen.getByTestId("calc");
     expect(button).toBeInTheDocument();
   });
 
@@ -19,13 +19,13 @@ describe("User interface for the String Calculator", () => {
     render(<App />);
 
     const inputValue = "1,3";
-    const input = screen.getByRole("textbox");
-    const button = screen.getByRole("calc");
+    const input = screen.getByTestId("textbox");
+    const button = screen.getByTestId("calc");
 
     fireEvent.change(input, { target: { value: inputValue } });
     fireEvent.click(button);
 
-    const result = screen.getByRole("result");
+    const result = screen.getByTestId("result");
 
     expect(result.textContent).toBe(String(add(inputValue)));
   });
