@@ -26,4 +26,13 @@ describe("Testing Utils", () => {
       expect(add("//;\n1;2")).toBe(3);
     });
   });
+
+  describe("Test 'add' function taking negative numbers", () => {
+    test("function takes negative number as input throws error", () => {
+      expect(() => add("-1,2")).toThrow("-1");
+      expect(() => add("-1,-2")).toThrow("-1,-2");
+      expect(() => add("-1,-2,3")).toThrow("-1,-2");
+      expect(() => add("-1,-2,-3")).toThrow("-1,-2,-3");
+    });
+  });
 });
