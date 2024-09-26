@@ -20,4 +20,10 @@ describe("Testing Utils", () => {
       expect(add("1\n2,3")).toBe(6);
     });
   });
+
+  describe("Test 'add' function taking numbers seperated by specific delimitors", () => {
+    test("function takes input as '//;\n1;2' and output as 3", () => {
+      expect(add("//;\n1;2")).toBe(3);
+    });
+  });
 });
