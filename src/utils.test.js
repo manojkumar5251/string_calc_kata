@@ -1,7 +1,7 @@
 import { add } from "./utils";
 
 describe("Testing Utils", () => {
-  describe("Test 'add' function", () => {
+  describe("Test 'add' function taking numbers seperated by comma", () => {
     test("function takes input as empty string and output as 0", () => {
       expect(add("")).toBe(0);
     });
