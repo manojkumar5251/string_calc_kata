@@ -7,4 +7,10 @@ describe("User interface for the String Calculator", () => {
     const inputElement = screen.getByRole("textbox");
     expect(inputElement).toBeInTheDocument();
   });
+
+  test("renders the button", () => {
+    render(<App />);
+    const buttonElement = screen.getByRole("calc");
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
