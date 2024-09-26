@@ -1,1 +1,3 @@
-const add = (numbers) => {};
+export const add = (numbers) => {
+  return 0;
+};
