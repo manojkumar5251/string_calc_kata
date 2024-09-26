@@ -1,6 +1,6 @@
 export const add = (numbers = "") => {
   let sum = 0;
-  numbers.split(",").forEach((el) => {
+  numbers.split(/,|\n/g).forEach((el) => {
     sum = sum + Number(el);
   });
 
