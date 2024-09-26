@@ -14,4 +14,10 @@ describe("Testing Utils", () => {
       expect(add("1,5")).toBe(6);
     });
   });
+
+  describe("Test 'add' function taking numbers seperated by comma & newline char", () => {
+    test("function takes input as '1\n2,3' and output as 6", () => {
+      expect(add("1\n2,3")).toBe(6);
+    });
+  });
 });
