@@ -18,14 +18,15 @@ describe("User interface for the String Calculator", () => {
   test("calculates the data on button click", () => {
     render(<App />);
 
+    const inputValue = "1,3";
     const input = screen.getByRole("textbox");
     const button = screen.getByRole("calc");
 
-    fireEvent.change(input, { target: { value: "1,3" } });
+    fireEvent.change(input, { target: { value: inputValue } });
     fireEvent.click(button);
 
     const result = screen.getByRole("result");
 
-    expect(result).toHaveValue(add("4"));
+    expect(result.textContent).toBe(String(add(inputValue)));
   });
 });
